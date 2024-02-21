@@ -48,4 +48,4 @@ jobs:
         NEW_VERSION: ${{ steps.version.outputs.version }}
       run: |
        docker push cryss/docker-graphql:$NEW_VERSION
-       docker push cryss/docker-graphql:latest 
+       docker push cryss/docker-graphql:latest
