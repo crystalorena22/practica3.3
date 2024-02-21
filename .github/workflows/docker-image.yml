@@ -40,12 +40,12 @@ jobs:
       env:        
         NEW_VERSION: ${{ steps.version.outputs.version }}
       run: |
-        docker build -t cryss/docker-graphql:$NEW_VERSION .
-        docker build -t cryss/docker-graphql:latest .
+        docker build -t cryss/practica3.3:$NEW_VERSION .
+        docker build -t cryss/practica3.3:latest .
         
     - name: Push Docker Image
       env:
         NEW_VERSION: ${{ steps.version.outputs.version }}
       run: |
-       docker push cryss/docker-graphql:$NEW_VERSION
-       docker push cryss/docker-graphql:latest
+       docker push cryss/practica3.3:$NEW_VERSION
+       docker push cryss/practica3.3:latest
