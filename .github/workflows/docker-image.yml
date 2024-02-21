@@ -56,13 +56,12 @@ jobs:
        #docker push cryss/practica3.3:$NEW_VERSION
        #docker push cryss/practica3.3:latest
 
+
     - name: Build and Push Docker Image
       env:        
         NEW_VERSION: ${{ steps.version.outputs.version }}
       run: |
         docker buildx create --use
         docker buildx inspect --bootstrap
-        docker buildx build --platform linux/amd64,linux/arm64 -t cryss/practica3.3:$NEW_VERSION .
-        docker buildx build --platform linux/amd64,linux/arm64 -t cryss/practica3.3:latest .
-        docker push cryss/practica3.3:$NEW_VERSION
-        docker push cryss/practica3.3:latest
+        docker buildx build --platform linux/amd64,linux/arm64 -t cryss/practica3.3:$NEW_VERSION --push --load .
+        docker buildx build --platform linux/amd64,linux/arm64 -t cryss/practica3.3:latest --push --load .
