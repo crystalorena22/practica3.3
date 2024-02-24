@@ -44,5 +44,5 @@ jobs:
       env:        
         NEW_VERSION: ${{ steps.version.outputs.version }}
       run: |
-        docker buildx build --platform linux/amd64,linux/arm64 -t 'cryss/practica3.3:$NEW_VERSION' --push .
-        docker buildx build --platform linux/amd64,linux/arm64 -t 'cryss/practica3.3:latest' --push .
+        docker buildx build --platform linux/amd64,linux/arm64 -t "cryss/practica3.3:$NEW_VERSION" --push .
+        docker buildx build --platform linux/amd64,linux/arm64 -t "cryss/practica3.3:latest" --push .
